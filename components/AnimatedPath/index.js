@@ -49,6 +49,7 @@ class AnimatedSvgPaths extends Component {
     const {
       delay,
       duration,
+      after
     } = this.props;
     this.strokeDashoffset.setValue(this.length);
     Animated.sequence([
@@ -57,7 +58,7 @@ class AnimatedSvgPaths extends Component {
         toValue: 0,
         duration: duration,
       })
-    ]).start(() => this.animate());
+    ]).start(after);
   }
 
   componentDidMount() {
